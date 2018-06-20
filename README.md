@@ -64,7 +64,7 @@ Get single match data
 
 ```graphql
 {
-  match(id:"47529205-1e29-4149-ac67-90907027c5f0"){
+  match(id:"47529205-1e29-4149-ac67-90907027c5f0",shards:"pc-eu"){
       id
       map
       isCustomMatch
