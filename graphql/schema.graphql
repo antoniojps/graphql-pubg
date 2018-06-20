@@ -1,0 +1,44 @@
+type Query {
+	player(name: String!,matchesLimit: Int,shards:String) : Player,
+	match(id: ID!, shards: String!) : Match
+}
+
+type Player {
+	id: ID!,
+	name: String,
+	matches: [Match]
+}
+
+type Match {
+	id: String,
+	gameMode: String,
+	createdAt: String,
+	map: String,
+	isCustomMatch: Boolean,
+	duration: Int,
+	server: String,
+	rosters: [Roster]
+}
+
+type Roster {
+	id: ID!,
+	slot: Int,
+	stats: RosterStats,
+	participants: [Participant]
+}
+
+type RosterStats {
+	rank: Int,
+	won: Boolean,
+	kills: Int,
+	damage: Int,
+	dbnos: Int
+}
+
+type Participant {
+	id: ID!,
+	name: String,
+	kills: Int,
+	damage: Float,
+	dbnos: Int
+}
