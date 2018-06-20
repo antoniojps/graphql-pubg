@@ -64,13 +64,13 @@ Get single match data
 
 ```graphql
 {
-  match(id:"47529205-1e29-4149-ac67-90907027c5f0",shards:"pc-eu"){
+  match(id:"47529205-1e29-4149-ac67-90907027c5f0"){
       id
       map
       isCustomMatch
       rosters{
         stats{
-        	rank
+          rank
           kills
           damage
         }
@@ -92,5 +92,5 @@ Get single match data
 - No telemetry data
 
 ### Docs for the Utils
-- [Filter](./docs/utils_filter)
-- [Pubg-Api](./docs/utils_pubg-api)
+- [Filter](./docs/utils_filter.md)
+- [Pubg-Api](./docs/utils_pubg-api.md)
