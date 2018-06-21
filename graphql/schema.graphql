@@ -17,6 +17,7 @@ type Match {
 	isCustomMatch: Boolean,
 	duration: Int,
 	server: String,
+	totalParticipants: Int,
 	rosters: [Roster]
 }
 

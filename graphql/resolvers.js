@@ -36,6 +36,7 @@ const Match = {
 	isCustomMatch: obj => obj.data.attributes.isCustomMatch,
 	duration: obj => obj.data.attributes.duration,
 	server: obj => obj.data.attributes.shardId,
+	totalParticipants: obj => _match.getParticipants(obj).length,
 	rosters: obj => _match.getRosters(obj)
 }
 

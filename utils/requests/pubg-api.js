@@ -48,7 +48,10 @@ async function getMatchListData(matchesIdArr, shards = 'pc-eu') {
  * @returns {promise} 
  */
 async function getMatchData(matchID, shards = 'pc-eu') {
-	const match = await ax.get(`${encodeURI(shards)}/matches/${encodeURI(matchID)}`)
+	const url = `${encodeURI(shards)}/matches/${encodeURI(matchID)}`
+	console.log(url)
+
+	const match = await ax.get(url)
 		.then(res => res.data)
 		.catch(err => {
 			console.log(err)

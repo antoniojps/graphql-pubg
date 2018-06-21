@@ -31,7 +31,8 @@ http://localhost:9000/graphiql
 The last 2 games of the player "shroud" in the North American server
 
 ```graphql
-player(name:"shroud",shards:"pc-na",matchesLimit:2){
+{
+  player(name:"shroud",shards:"pc-na",matchesLimit:2){
     matches{
       id
       gameMode
@@ -39,6 +40,7 @@ player(name:"shroud",shards:"pc-na",matchesLimit:2){
       map
       isCustomMatch
       duration
+      totalParticipants
       rosters{
         id
         slot
@@ -54,10 +56,11 @@ player(name:"shroud",shards:"pc-na",matchesLimit:2){
           kills
           damage
           dbnos
-        }
+        } 
       }
     }
   }
+}
 ```
 
 Get single match data
