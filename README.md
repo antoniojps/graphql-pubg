@@ -1,4 +1,5 @@
-# graphql-pubg
+![graphql-pubg](./docs/logo.png)
+# GraphQL-pubg
 PUBG API aggregator on top of GraphQL
 
 ## How to start the server?
