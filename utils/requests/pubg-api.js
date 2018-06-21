@@ -22,7 +22,7 @@ async function getPlayerMatches(player, shards = "pc-eu") {
 	const playerMatches = await ax.get(url)
 		.then(res => res.data)
 		.catch(err => {
-			console.log(error)
+			console.log(err)
 			return err
 		})
 	return playerMatches
