@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js",
+    "watch": "nodemon server.js",
     "start": "node server.js",
     "debug": "nodemon --inspect-brk server.js"
   },

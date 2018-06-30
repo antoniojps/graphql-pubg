@@ -5,27 +5,21 @@ const _pubg = require('./../utils/requests/pubg-api')
 
 const Query = {
 	player: (obj, arg) => {
-		return _pubg.getPlayerMatches(arg.name, arg.shards).then((player) => {
+		return _pubg.getPlayerMatches(arg.name, arg.shards).then(player => {
 			return {
 				id: player.data[0].id,
 				name: player.data[0].attributes.name,
 				matches: () => {
 					arg.matchesLimit = arg.matchesLimit || 1;
 					const matchesIDs = _player.getPlayerMatchesArr(player, arg.matchesLimit)
-					return matches = _pubg.getMatchListData(matchesIDs, arg.shards).then(res => {
-						return res
-					})
+					return _pubg.getMatchListData(matchesIDs, arg.shards).then(res => res)
 				}
 			}
 		}).catch(err => {
 			console.log(err)
 		})
 	},
-	match: (obj, arg) => {
-		return _pubg.getMatchData(arg.id).then(res => {
-			return res
-		})
-	}
+	match: (obj, arg) =>  _pubg.getMatchData(arg.id).then(res => res)
 }
 
 const Match = {
@@ -46,8 +40,8 @@ const Roster = {
 	stats: obj => {
 		const rosterParticipants = _match.getRosterParticipantsArr(obj.roster)
 		const matchParticipants = _match.getParticipants(obj.match)
-
 		const rosterParticipantsData = _match.getRosterParticipants(matchParticipants, rosterParticipants);
+
 		return {
 			rosters: obj.roster,
 			participants: rosterParticipantsData
@@ -64,15 +58,10 @@ const Roster = {
 
 const RosterStats = {
 	won: obj => obj.rosters.attributes.won === "true" ? true : false,
-	rank: obj => {
-		return obj.rosters.attributes.stats.rank
-	},
-	kills: obj => {
-		return _match.getRosterKills(obj.participants)
-	},
+	rank: obj =>  obj.rosters.attributes.stats.rank,
+	kills: obj =>  _match.getRosterKills(obj.participants),
 	damage: obj => _match.getRosterDamage(obj.participants),
 	dbnos: obj => _match.getRosterDbnos(obj.participants)
-
 }
 
 const Participant = {
