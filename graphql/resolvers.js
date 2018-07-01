@@ -4,7 +4,7 @@ const _pubg = require('./../utils/requests/pubg-api')
 
 
 const Query = {
-	player: (obj, arg) => {
+	player: (root,arg) => {
 		return _pubg.getPlayerMatches(arg.name, arg.shards).then(player => {
 			return {
 				id: player.data[0].id,
@@ -65,7 +65,6 @@ const RosterStats = {
 }
 
 const Participant = {
-	id: obj => obj.id,
 	name: obj => obj.attributes.stats.name,
 	kills: obj => obj.attributes.stats.kills,
 	damage: obj => obj.attributes.stats.damageDealt,
