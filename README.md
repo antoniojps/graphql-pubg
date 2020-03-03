@@ -1,3 +1,6 @@
+# Deprecated
+I no longer maintain this project and do not recommend it's usage.
+
 ![graphql-pubg](./docs/logo.png)
 # GraphQL-pubg
 PUBG API aggregator on top of GraphQL
