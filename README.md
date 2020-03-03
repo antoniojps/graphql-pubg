@@ -1,5 +1,6 @@
-# Deprecated
-I no longer maintain this project and do not recommend it's usage.
+```diff
+- Warning: this project is not being maintained and it's usage is not recommended.
+```
 
 ![graphql-pubg](./docs/logo.png)
 # GraphQL-pubg
